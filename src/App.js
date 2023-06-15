@@ -1,50 +1,128 @@
+//working with array list
 
-// function App() {
+// import React from 'react'
 
-//   // javascript
-//   //console.log('hello from component');
+// function app(props) {
 
-//   const now = new Date();
-//   const a = 10;
-//   const b = 20;
-
-//   console.log(now, a + b);
-
+//   const { notes } = props;
+//   //console.log(notes);
 //   return (
 //     <div>
-//       <p>Hello World! it is { now.toString()}</p>
-//       <p>
-//         {a} plus {b} is {a + b}
-//       </p>
-      
+//       <h1>notes</h1>
+//       <ul>
+//         <li>{notes[0].content}</li>
+//         <li>{notes[1].content}</li>
+//         <li>{notes[2].content}</li>
+//         <li>{notes[3].content}</li>
+//         <li>{notes[4].content}</li>
+//       </ul>
 //     </div>
-//   );
+//   )
 // }
 
-// export default App;
+// export default app
+
+
+
+// import React from 'react'
+
+// function app(props) {
+
+//   const { notes } = props;
+//   //console.log(notes.map(note => <li> {note.content} </li> ));
+//   return (
+//     <div>
+//       <h1>notes</h1>
+//       <ul>
+//         {notes.map(note => 
+//         <li key= {note.id} > {note.content} </li> )}
+//       </ul>
+//     </div>
+//   )
+// }
+// export default app
+
+
+// import React from 'react'
+
+// function Note({note}) {
+
+//   //★
+//   if (note.important) {
+//   return(
+//     <li> {note.content}★ </li>
+//     )}
+//     return(
+//     <li> {note.content} </li>
+//     )
+// }
+// function app({notes}) {
+//   return( 
+//     <div>
+//       <h1>notes</h1>
+//       <ul>
+//       {notes.map(note => 
+//            <Note  key= {note.id} note= { note }/>
+//       )}
+//       </ul>
+//     </div>
+//   )
+// }
+  
+    
+// export default app
+
+
+
+// import React from 'react'
+
+// function Note({note}) {
+
+//     return(
+//     <li>
+//        {note.important ? note.content +' ★ ' : note.content} 
+//     </li>
+//     )
+// }
+// function app({notes}) {
+//   return( 
+//     <div>
+//       <h1>notes</h1>
+//       <ul>
+//       {notes.map(note => 
+//            <Note  key= {note.id} note= { note }/>
+//       )}
+//       </ul>
+//     </div>
+//   )
+// }
+  
+// export default app
+
+
 
 import React from 'react'
 
-function Hello(prop) {
-  console.log(prop);
-  return(
+function Note({note}) {
+
+    return(
+    <li>
+       {/* {note.important ? note.content +' ★ ' : note.content}  */}
+       {note.content} {note.important && ' ★ '}
+    </li>
+    )
+}
+function app({notes}) {
+  return( 
     <div>
-      <p>hello world { prop.name } , {prop.age} years oldgit !</p>
+      <h1>notes</h1>
+      <ul>
+      {notes.map(note => 
+           <Note  key= {note.id} note= { note }/>
+      )}
+      </ul>
     </div>
   )
 }
-
-function App() {
-  return (
-    <div>
-      <p>greeting</p>
-      <Hello name = 'pavithran' age = '24'/>
-      <Hello name = 'sathish' age = '30'/>
-      <Hello name = 'vimal' age = '29'/>
-
-    </div>
-  )
-}
-
-export default App
-
+  
+export default app
