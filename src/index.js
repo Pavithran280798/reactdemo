@@ -30,7 +30,7 @@ const notes = [
         content:'props vs states',
         important: false
     },
-]
+]git
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App notes={ notes } />);

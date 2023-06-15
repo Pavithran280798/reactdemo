@@ -101,18 +101,91 @@
 
 
 
+// import React from 'react'
+
+// function Note({note}) {
+
+//     return(
+//     <li>
+//        {/* {note.important ? note.content +' ★ ' : note.content}  */}
+//        {note.content} {note.important && ' ★ '}
+//     </li>
+//     )
+// }
+// function app({notes}) {
+//   return( 
+//     <div>
+//       <h1>notes</h1>
+//       <ul>
+//       {notes.map(note => 
+//            <Note  key= {note.id} note= { note }/>
+//       )}
+//       </ul>
+//     </div>
+//   )
+// }
+  
+// export default app
+
+
+
+//event handiling
+
+// import React from 'react'
+
+// function Note({note}) {
+
+//     return(
+//     <li>
+//        {note.content} {note.important && ' ★ '}
+//     </li>
+//     )
+// }
+// function app({notes}) {
+
+// const addNote = (event) => {
+//   event.preventDefault();
+//   console.log('button clicked',event.target);
+// }
+
+//   return( 
+//     <div>
+//       <h1>notes</h1>
+//       <ul>
+//       {notes.map(note => 
+//            <Note  key= {note.id} note= { note }/>
+//       )}
+//       </ul>
+
+//       <form onSubmit={addNote}>
+//         <input />
+//         <button type='submit'>save note</button>
+//       </form>
+//     </div>
+//   )
+// }
+  
+// export default app
+
+
+
 import React from 'react'
 
 function Note({note}) {
 
     return(
     <li>
-       {/* {note.important ? note.content +' ★ ' : note.content}  */}
        {note.content} {note.important && ' ★ '}
     </li>
     )
 }
 function app({notes}) {
+
+const addNote = (event) => {
+  event.preventDefault();
+  console.log('button clicked',event.target);
+}
+
   return( 
     <div>
       <h1>notes</h1>
@@ -121,6 +194,11 @@ function app({notes}) {
            <Note  key= {note.id} note= { note }/>
       )}
       </ul>
+
+      <form>
+        <input />
+        <button onClick={() => console.log('button clicked')}>save note</button>
+      </form>
     </div>
   )
 }
